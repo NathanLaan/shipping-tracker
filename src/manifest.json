@@ -1,0 +1,31 @@
+{
+  "name": "Shipping Tracker",
+  "description": "Shipping Tracker",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab", "commands"],
+  "commands": {
+    "_execute_action": {
+			"suggested_key": {
+        "windows": "Ctrl+Shift+Z",
+        "mac": "Command+Shift+Z",
+        "chromeos": "Ctrl+Shift+Z",
+        "linux": "Ctrl+Shift+Z"
+			},
+			"description": "ShippingTracker",
+			"global": false		
+		}
+  },
+  "action": {
+    "default_title": "ShippingTracker",
+    "default_icon": "/icons/delivery-black-128.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "32": "/icons/delivery-black-32.png",
+    "128": "/icons/delivery-black-128.png"
+  }
+}
