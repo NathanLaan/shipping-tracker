@@ -11,9 +11,18 @@ function msg(m) {
 
 window.onload = function () {
   shippingLinkListElement = document.getElementById('shippingLinkList');
+  //
+  // TODO: Load list of ShippingLink items from storage.
+  //
 };
 
 
+function displayList(shippingLinkList) {
+  shippingLinkListElement.innerHTML = '';
+  if(shippingLinkList) {
+    shippingLinkList.forEach((x, i) => appendShippingLinkListElement(x));
+  }
+}
 
 /*
  * 
@@ -41,8 +50,8 @@ function createFolderElement(txt) {
   return listElement;
 }
 
-function createShippingLinkListElement(bookmark) {
+function createShippingLinkListElement(shippingLink) {
   const listElement = document.createElement('li');
-  listElement.appendChild(createLinkElement(bookmark.url, bookmark.title));
-  return listElement;
+  listElement.appendChild(createLinkElement(shippingLink.url, shippingLink.title));
+  shippingLinkListElement.appendChild(listElement);
 }
